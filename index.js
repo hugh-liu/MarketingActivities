@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(cors());
 app.use(logger);
 
+global.navigator = {
+  userAgent: 'node.js',
+};
+
 // 首页
 app.get("/", async (req, res) => {
   navigator.userAgent.toLowerCase();
