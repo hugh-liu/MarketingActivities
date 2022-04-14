@@ -14,6 +14,12 @@ app.use(logger);
 
 // 首页
 app.get("/", async (req, res) => {
+  res.send("Hello World!")
+  //res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// 验证Signature
+app.get("/checkSignature", async (req, res) => {
   const query = req.query;
   const isFromWechatServer = require("./checkSignature")(query);
   if (isFromWechatServer) {
