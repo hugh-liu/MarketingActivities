@@ -10,7 +10,7 @@ module.exports = (opts) => {
 
     const array = new Array(MY_TOKEN, timestamp, nonce);
 
-    const MY_SIGNATURE = crypto.createHash('hugh')
+    const MY_SIGNATURE = crypto.createHash('sha1')
         .update(array.sort().toString().replace(/,/g, ""), 'utf-8')
         .digest('hex');
     return MY_SIGNATURE === signature;
