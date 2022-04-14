@@ -14,7 +14,8 @@ app.use(logger);
 
 // 首页
 app.get("/", async (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.send("Hello World!")
+  //res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // 更新计数
