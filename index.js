@@ -22,8 +22,9 @@ app.get("/", async (req, res) => {
   const isWeixin = ua.indexOf('micromessenger') != -1;
   if (!isWeixin) {
     res.redirect("https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2a73de42aa936d63redirect_uri=https://express-9vkv-1825942-1311202647.ap-shanghai.run.tcloudbase.com/");
+  } else {
+    res.send("Hello World!")
   }
-  res.send("Hello World!")
   //res.sendFile(path.join(__dirname, "index.html"));
 });
 
